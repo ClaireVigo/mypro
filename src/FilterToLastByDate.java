@@ -1,22 +1,23 @@
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class MyTest {
+public class FilterToLastByDate {
 
     public static void main(String[] args) {
-        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
+        //初始化测试数据
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
         Map<String, Object> map1 = new HashMap<String, Object>();
 
         map1.put("name", "张三");
         map1.put("approvalDepartment", "企法部");
-        map1.put("approvalDate", " 2018-08-03 16:19:36:403000");
+        map1.put("approvalDate", " 2011-08-03 16:19:36:403000");
         list.add(map1);
 
         Map<String, Object> map2 = new HashMap<String, Object>();
         map2.put("name", "李四");
         map2.put("approvalDepartment", "企法部");
-        map2.put("approvalDate", " 2018-08-04 16:19:36:403000");
+        map2.put("approvalDate", " 2013-08-04 16:19:36:403000");
         list.add(map2);
 
         Map<String, Object> map3 = new HashMap<String, Object>();
@@ -28,7 +29,7 @@ public class MyTest {
         Map<String, Object> map4 = new HashMap<String, Object>();
         map4.put("name", "王五");
         map4.put("approvalDepartment", "企法部");
-        map4.put("approvalDate", " 2018-08-01 16:19:36:403000");
+        map4.put("approvalDate", " 2015-08-01 16:19:36:403000");
         list.add(map4);
 
         Map<String, Object> map5 = new HashMap<String, Object>();
@@ -40,7 +41,7 @@ public class MyTest {
         Map<String, Object> map6 = new HashMap<String, Object>();
         map6.put("name", "赵3");
         map6.put("approvalDepartment", "企法部");
-        map6.put("approvalDate", " 2018-08-06 16:19:36:403000");
+        map6.put("approvalDate", " 2011-08-06 16:19:36:403000");
         list.add(map6);
 
         Map<String, Object> map7 = new HashMap<String, Object>();
@@ -49,7 +50,9 @@ public class MyTest {
         map7.put("approvalDate", " 2018-08-01 16:19:36:403000");
         list.add(map7);
 
-        MyTest m = new MyTest();
+
+        //测试
+        FilterToLastByDate m = new FilterToLastByDate();
         List<Map<String, Object>> newList = m.filterBySameDept(list);
 
         for (Map<String, Object> s : newList) {
@@ -57,13 +60,17 @@ public class MyTest {
             System.out.println("approvalDepartment:" + s.get("approvalDepartment"));
             System.out.println("approvalDate:" + s.get("approvalDate"));
             System.out.println("---------------------");
-            ;
-
         }
 
     }
 
 
+    /**
+     * 相同部门只保留最新的一条
+     *
+     * @param list
+     * @return
+     */
     public List<Map<String, Object>> filterBySameDept(List<Map<String, Object>> list) {
         List<Map<String, Object>> newList = list;
         for (int i = 0; i < newList.size(); i++) {

@@ -97,7 +97,7 @@ public class SortListByMap {
                             return 0;
                         }
                     });
-                    Collections.reverse(newList);//正排注释这一行
+                    //Collections.reverse(newList);//正排注释这一行
                 } else {//其他
                     String id = list.get(i).get("id").toString();
                     String idLast = list.get(i - 1).get("id").toString();
@@ -125,7 +125,7 @@ public class SortListByMap {
                                 return 0;
                             }
                         });
-                        Collections.reverse(newList);//正排注释这一行
+                        //Collections.reverse(newList);//正排注释这一行
                     }
                 }
                 for (Map<String, Object> map : newList) {

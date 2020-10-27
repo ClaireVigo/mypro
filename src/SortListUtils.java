@@ -13,13 +13,13 @@ public class SortListUtils {
 
         Map<String, Object> map1 = new HashMap<>();
         map1.put("id", 1079);
-        map1.put("date", "2018-01-13 00:00:00");
+        map1.put("date", "2019-01-13 00:00:00");
         //map1.put("date",sdf.parse("2018-01-13 00:00:00"));
         list.add(map1);
 
         Map<String, Object> map2 = new HashMap<>();
         map2.put("id", 1092);
-        map2.put("date", "2018-05-21 00:00:00");
+        map2.put("date", "2011-05-21 00:00:00");
         //map2.put("date",sdf.parse("2018-05-21 00:00:00"));
         list.add(map2);
 
@@ -38,7 +38,7 @@ public class SortListUtils {
         //排序后的数据
         System.out.println("-----排序后的数据-----");
         //list = SortListUtils.sortListByMap(list,"id","int");
-        list = SortListUtils.sortListByMap(list, "date", "string");
+        list = SortListUtils.sortListByMap(list, "id", "int");
 
         //String[] keys = {"id","date"};
         //String[] type = {"int","string"};
